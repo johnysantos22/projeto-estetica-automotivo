@@ -66,11 +66,11 @@ h1 {
     margin: auto;
 }
 
-.imgserviços,
-.nossosserviços img {
-    width: 50%;
-    margin-left: 6rem;
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
+
 
 .imgserviços {
     border-radius: 10px;
@@ -92,7 +92,7 @@ p,
     font-size: 1rem;
 }
 
-.paragrafoFinal{
+.paragrafoFinal {
     text-align: center;
 }
 
@@ -124,7 +124,7 @@ p,
 /* icon de whatsapp */
 .center-icon {
     position: fixed;
-    top: 50%;
+    top: 44%;
     transform: translateY(-50%);
     right: 1.5rem;
 
@@ -162,7 +162,10 @@ p,
 
 .navbar-brand img {
     animation: quica 3s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    width: 50px;
+    height: 50px;
 }
+
 
 
 
@@ -190,6 +193,24 @@ p,
 }
 
 
+/* responsividade */
+
+
+@media (min-width: 768px) {
+    .row-cols-md-3>* {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+    .row-cols-sm-2>* {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+
 @media (min-width: 992px) {
     .partiservicos .container .row>div {
         display: flex;
@@ -199,7 +220,7 @@ p,
 
     }
 
-    .tilutoprincipal{
+    .tilutoprincipal {
         margin: -400px 0px 0px 0px;
     }
 
