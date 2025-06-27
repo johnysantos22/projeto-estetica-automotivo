@@ -1,237 +1,120 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body,
-html {
-    font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Adiciona a margem superior inicial */
-.navbar-toggler {
-    transition: margin-top 0.3s ease;
+.hero-section {
+  background: url('assets/img7.jpeg') no-repeat center center/cover;
+  height: 80vh;
+  padding-top: 5rem;
+  box-shadow: inset 0 -899px 0 590px rgba(0, 0, 0, 0.75);
 }
 
-/* Adiciona a margem superior quando a classe mt-5 for aplicada */
-.mt-5.scrolled {
-    margin-top: 0px !important;
+.animate-logo {
+  animation: bounce 3s infinite;
 }
 
-
-.myBackground {
-    background-image: url(assets/img7.jpeg);
-    height: 78vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    box-shadow: inset 0 -899px 0 590px rgb(0, 0, 0, 0.75);
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-
-.active {
-    text-align: center;
-    font-size: 1.2rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.whatsapp-icon {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10000;
+  animation: pulse 2.5s infinite;
+  transition: all 0.3s ease;
 }
 
-.tilutoprincipal {
-    margin: -510px 0px 0px 0px;
-    margin-bottom: 15rem;
-    text-align: center;
-    font-size: 10px;
-    color: #ffff;
-    font: 1em "Roboto", sans-serif;
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 20px rgba(37, 211, 102, 0.7);
 }
-
-.h5,
-h5 {
-    font-size: 1.1rem;
-}
-
-h1 {
-    margin-bottom: 4rem;
-    margin-top: 2rem;
-}
-
-.partiservicos {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 960px;
-    margin: auto;
-}
-
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-}
-
-
-.imgserviços {
-    border-radius: 10px;
-    border-bottom: 5px solid blue;
-    box-shadow: 10px 10px 0px rgba(0, 0, 0, .25);
-    margin-bottom: 1rem;
-}
-
-h2,
-h4 {
-    font-size: 2rem;
-    margin-left: 2.5rem;
-    margin-bottom: 1px;
-}
-
-p,
-.btn-primary {
-    margin-left: 1.5rem;
-    font-size: 1rem;
-}
-
-.paragrafoFinal {
-    text-align: center;
-}
-
-.nossosserviços {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-}
-
-.nossosserviços img {
-    border-radius: 10px;
-    border-bottom: 5px solid blue;
-    margin-bottom: 1rem;
-}
-
-.img1,
-.img2,
-.img3,
-.img4 {
-    border: solid;
-    padding: inherit;
-    padding: 20px 10px;
-    height: 100%;
-    width: 80%;
-    margin-left: 2.5rem;
-}
-
-/* icon de whatsapp */
-.center-icon {
-    position: fixed;
-    top: 44%;
-    transform: translateY(-50%);
-    right: 1.5rem;
-
-}
-
-.center-icon svg {
-    fill: green;
-    margin-top: 15rem;
-    margin-right: 1rem;
-}
-
-
-/* Exemplo de animação de rotação personalizada */
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes quica {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(20%);
-    }
-}
-
-.navbar-brand img {
-    animation: quica 3s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-    width: 50px;
-    height: 50px;
-}
-
-
-
 
 @keyframes pulse {
-
-    0%,
-    100% {
-        border: 2px solid transparent;
-    }
-
-    50% {
-        border: 2px solid #4CAF50;
-    }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 0 15px 10px rgba(37, 211, 102, 0.2); }
 }
 
-.center-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.gallery-item {
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.bi-whatsapp {
-    border-radius: 50%;
-    animation: pulse 1s infinite;
+.gallery-item:hover {
+  transform: scale(1.05);
 }
 
-
-/* responsividade */
-
-
-@media (min-width: 768px) {
-    .row-cols-md-3>* {
-        flex: 0 0 auto;
-        width: 100%;
-    }
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
 
-@media (min-width: 576px) {
-    .row-cols-sm-2>* {
-        flex: 0 0 auto;
-        width: 100%;
-    }
+.modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  pointer-events: none;
 }
 
-
-@media (min-width: 992px) {
-    .partiservicos .container .row>div {
-        display: flex;
-        width: 100%;
-        height: auto;
-        margin: 1rem;
-
-    }
-
-    .tilutoprincipal {
-        margin: -400px 0px 0px 0px;
-    }
-
-    .imgserviços {
-        margin-right: 7rem;
-        margin-left: -4rem;
-    }
-
-    .nossosserviços img {
-        width: 100%;
-        max-height: 36rem;
-        margin-left: 0rem;
-    }
+.close {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1060;
 }
+
+.close:hover { color: #bbb; }
+
+.prev, .next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1060;
+  padding: 10px 20px;
+}
+
+.prev:hover, .next:hover {
+  color: #bbb;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
